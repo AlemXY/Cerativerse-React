@@ -23,7 +23,13 @@ export function History() {
           <div className="history-photo">
             <img
               src={asset("assets/images/about/about-img.png")}
-              alt="Retrato gráfico de Gustavo Cerati del proyecto original"
+              alt="Imagen de homenaje a Gustavo Cerati"
+              onError={(event) => {
+                const fallback = "https://cerati-verse.vercel.app/assets/images/about/about-img.png";
+                if (event.currentTarget.src !== fallback) {
+                  event.currentTarget.src = fallback;
+                }
+              }}
             />
           </div>
           <div className="history-copy">
