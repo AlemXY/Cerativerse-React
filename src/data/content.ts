@@ -1,7 +1,7 @@
 /** Material referencial del repositorio original del autor.
- * La titularidad y licencias de fotografías y portadas deben comprobarse antes de publicar comercialmente.
+ * Las imágenes se sirven provisionalmente desde el despliegue antiguo de Vercel.
  */
-const repo = "https://raw.githubusercontent.com/AlemXY/CeratiVerse/main/";
+const repo = "https://cerati-verse.vercel.app/";
 export const asset = (path: string): string =>
   repo + path.split("/").map(encodeURIComponent).join("/");
 
