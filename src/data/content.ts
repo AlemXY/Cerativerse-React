@@ -1,9 +1,16 @@
 /** Material referencial del repositorio original del autor.
- * Las imágenes se sirven provisionalmente desde el despliegue antiguo de Vercel.
+ * Las imágenes se sirven desde public/, salvo el retrato grande de historia, que se conserva temporalmente desde Vercel.
  */
-const repo = "https://cerati-verse.vercel.app/";
-export const asset = (path: string): string =>
-  repo + path.split("/").map(encodeURIComponent).join("/");
+/** Los recursos de esta web se sirven desde public/ y no dependen del repositorio antiguo.
+ * Única excepción temporal: imagen grande de historia, hasta disponer de su copia local.
+ */
+export const asset = (path: string): string => {
+  const base =
+    path === "assets/images/about/about-img.png"
+      ? "https://cerati-verse.vercel.app/"
+      : "/";
+  return base + path.split("/").map(encodeURIComponent).join("/");
+};
 
 export type Album = {
   title: string;
